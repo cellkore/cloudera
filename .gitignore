@@ -1,0 +1,9 @@
+**/target
+bin
+.settings
+.cache-main
+.cache-tests
+.classpath
+.project
+wikipedia.dat
+

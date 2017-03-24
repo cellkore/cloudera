@@ -1,1 +1,1 @@
-# cloudera
+# Coursera projects

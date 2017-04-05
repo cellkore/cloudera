@@ -20,10 +20,25 @@ object Main {
   /**
    * Exercise 2
    */
-    def balance(chars: List[Char]): Boolean = ???
-  
+    def balance(chars: List[Char]): Boolean = {
+      def balancedParantheses(chars: List[Char], open: Int): Boolean = {
+        if (chars.isEmpty) open == 0
+            else
+                if (chars.head == '(') balancedParantheses(chars.tail,open+1)        
+                else
+                    if (chars.head == ')') open>0 && balancedParantheses(chars.tail,open-1)
+                    else balancedParantheses(chars.tail,open)
+      }      
+      balancedParantheses(chars,0)
+   }
+    
   /**
    * Exercise 3
    */
-    def countChange(money: Int, coins: List[Int]): Int = ???
+    def countChange(money: Int, coins: List[Int]): Int = {
+      if(money==0) 1
+      else if(money>0 && !coins.isEmpty)
+        return countChange(money-coins.head, coins) + countChange(money, coins.tail);
+      else 0;
+    }
   }
